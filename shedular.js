@@ -9,7 +9,7 @@ async function deleteData() {
   if (files.length) {
     for (const file of files) {
       try {
-        fs.unlinkSync(`app/${file.path}`);
+        fs.unlinkSync(file.path);
         await file.remove();
         console.log(`successfully deleted ${file.filename}`);
       } catch (error) {
