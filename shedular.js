@@ -9,14 +9,14 @@ async function deleteData() {
   if (files.length) {
     for (const file of files) {
       try {
-        fs.unlinkSync(file.path);
+        fs.unlinkSync(`${__dirname}/../${file.path}`);
         await file.remove();
         console.log(`successfully deleted ${file.filename}`);
       } catch (error) {
         console.log(`error while deleting file ${error}`);
       }
     }
-    console.log('whole job for this time');
+    console.log('Done job for this time');
   }
 }
 
